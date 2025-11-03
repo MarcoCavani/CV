@@ -136,27 +136,7 @@
     }
   </style>
 </head>
-<script>
-  // Set your passkey here
-  const passkey = "Marco2025"; // change to your desired password
 
-  // Ask for the passkey
-  let attempts = 3; // optional: limit attempts
-  let enteredKey = prompt("Please enter the passkey to access this CV:");
-
-  while (enteredKey !== passkey && attempts > 1) {
-    attempts--;
-    enteredKey = prompt("Incorrect passkey. You have " + attempts + " attempt(s) left. Please try again:");
-  }
-
-  if (enteredKey !== passkey) {
-    alert("Access denied!");
-    // Redirect or hide content
-    document.body.innerHTML = "<h2>Access Denied</h2>";
-    // OR redirect to another page
-    // window.location.href = "https://www.google.com";
-  }
-</script>
 
 <body>
   <div class="container">
