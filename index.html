@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Cavani – Curriculum Vitae</title>
+
+  <style>
+    /* ===== BASE LAYOUT ===== */
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e9ecf5, #f7f8fa);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      max-width: 480px;
+      width: 90%;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-4px);
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #334266;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 16px;
+      color: #666;
+      font-weight: normal;
+      margin-bottom: 35px;
+    }
+
+    /* ===== LANGUAGE OPTIONS ===== */
+    .lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 10px 0;
+  background-color: #f4f6fb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  text-decoration: none; /* removes underline from links */
+  color: inherit; /* keeps text color */
+}
+
+
+    .lang-option:hover {
+      border-color: #334266;
+      background-color: #e8ecf7;
+      transform: scale(1.02);
+    }
+
+    .lang-option img {
+      width: 38px;
+      height: auto;
+      border-radius: 4px;
+      margin-right: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .lang-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lang-text strong {
+      font-size: 18px;
+      color: #334266;
+    }
+
+    .lang-text span {
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    footer a {
+      color: #334266;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .lang-option img {
+        width: 32px;
+        margin-right: 12px;
+      }
+
+      .lang-text strong {
+        font-size: 16px;
+      }
+
+      .lang-text span {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<script>
+  // Set your passkey here
+  const passkey = "Marco2025"; // change to your desired password
+
+  // Ask for the passkey
+  let attempts = 3; // optional: limit attempts
+  let enteredKey = prompt("Please enter the passkey to access this CV:");
+
+  while (enteredKey !== passkey && attempts > 1) {
+    attempts--;
+    enteredKey = prompt("Incorrect passkey. You have " + attempts + " attempt(s) left. Please try again:");
+  }
+
+  if (enteredKey !== passkey) {
+    alert("Access denied!");
+    // Redirect or hide content
+    document.body.innerHTML = "<h2>Access Denied</h2>";
+    // OR redirect to another page
+    // window.location.href = "https://www.google.com";
+  }
+</script>
+
+<body>
+  <div class="container">
+    <h1>Marco Cavani</h1>
+    <h2>Select your preferred CV language</h2>
+
+   <!-- English -->
+<a href="html/CV-Marco-en.html" target="_blank" rel="noopener noreferrer" class="lang-option">
+  <img src="img/flags/gb-eng.png" alt="English Flag" />
+  <div class="lang-text">
+    <strong>English Version</strong>
+    <span>For international and corporate roles</span>
+  </div>
+</a>
+
+<!-- Italian -->
+<a href="html/CV-Marco-it.html" target="_blank" rel="noopener noreferrer" class="lang-option">
+  <img src="img/flags/it.png" alt="Italian Flag" />
+  <div class="lang-text">
+    <strong>Versione Italiana</strong>
+    <span>Per aziende e opportunità in Italia</span>
+  </div>
+</a>
+
+<!-- French -->
+<a href="html/CV-Marco-fr.html" target="_blank" rel="noopener noreferrer" class="lang-option">
+  <img src="img/flags/fr.png" alt="French Flag" />
+  <div class="lang-text">
+    <strong>Version Française</strong>
+    <span>Pour entreprises et rôles internationaux</span>
+  </div>
+</a>
+
+<!-- German -->
+<a href="html/CV-Marco-de.html" target="_blank" rel="noopener noreferrer" class="lang-option">
+  <img src="img/flags/de.png" alt="German Flag" />
+  <div class="lang-text">
+    <strong>Deutsche Version</strong>
+    <span>Für Unternehmen und internationale Positionen</span>
+  </div>
+</a>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Marco Cavani · <a href="https://marcoweb.org/">marcoweb.org</a></p>
+  </footer>
+</body>
+</html>
