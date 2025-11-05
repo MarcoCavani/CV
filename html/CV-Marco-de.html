@@ -126,19 +126,30 @@
     </footer>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <script>
-    document.getElementById("downloadPdfBtn").addEventListener("click", function() {
-      var element = document.querySelector(".container");
-      var opt = {
-        margin: 0.5,
-        filename: 'Lebenslauf_Marco_Cavani.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
-    });
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+document.getElementById("downloadPdfBtn").addEventListener("click", function() {
+  const element = document.querySelector(".container");
+  const btn = document.getElementById("downloadPdfBtn");
+  
+  // Hide the button in the PDF
+  btn.style.display = "none";
+
+  const opt = {
+  margin: 0.5,
+  filename: 'CV_Marco_Cavani_International.pdf',
+  image: { type: 'jpeg', quality: 0.7 },
+  html2canvas: { scale: 1.5, useCORS: true, scrollY: 0 },
+  jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait', compressPDF: true },
+  pagebreak: { mode: ['css', 'legacy'] } // let CSS rules control breaking
+};
+
+
+  html2pdf().set(opt).from(element).save().then(() => {
+    // Show the button again after PDF generation
+    btn.style.display = "inline-block";
+  });
+});
+</script>
 </body>
 </html>
